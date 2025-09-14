@@ -6,6 +6,7 @@ exports.sendCommand = async (path) => {
     const res = await fetch(`${ARDUINO_IP}${path}`);
     return await res.json();
   } catch (err) {
+    console.error("Error al conectar con Arduino:", err.message);
     return { error: "No se pudo comunicar con Arduino" };
   }
 };

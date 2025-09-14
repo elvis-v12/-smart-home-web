@@ -1,29 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>🏠 Panel Casa Domótica</h1>
+  <h1>🏠 <%= title %></h1>
 
-  <section>
-    <h2>💡 Luces</h2>
-    <button onclick="controlar('/api/lights/on')">Encender</button>
-    <button onclick="controlar('/api/lights/off')">Apagar</button>
-  </section>
+  <div class="dashboard">
+    <!-- Sección luces -->
+    <section>
+      <h2>💡 Luces</h2>
+      <button onclick="controlar('/api/lights/on')">Encender</button>
+      <button onclick="controlar('/api/lights/off')">Apagar</button>
+    </section>
 
-  <section>
-    <h2>🌡️ Temperatura</h2>
-    <p id="temp">Cargando...</p>
-  </section>
+    <!-- Sección temperatura -->
+    <section>
+      <h2>🌡️ Temperatura</h2>
+      <p id="temp">Cargando...</p>
+    </section>
 
-  <section>
-    <h2>🚪 Puerta</h2>
-    <button onclick="controlar('/api/door/open')">Abrir</button>
-    <button onclick="controlar('/api/door/close')">Cerrar</button>
-  </section>
+    <!-- Sección puerta -->
+    <section>
+      <h2>🚪 Puerta</h2>
+      <button onclick="controlar('/api/door/open')">Abrir</button>
+      <button onclick="controlar('/api/door/close')">Cerrar</button>
+    </section>
 
+    <!-- Sección cortina -->
+    <section>
+      <h2>🪟 Cortina</h2>
+      <button onclick="controlar('/api/curtain/open')">Abrir</button>
+      <button onclick="controlar('/api/curtain/close')">Cerrar</button>
+    </section>
+
+    <!-- Sección movimiento -->
+    <section>
+      <h2>👀 Movimiento</h2>
+      <p id="motion">Cargando...</p>
+    </section>
+  </div>
+
+  <!-- Script JS -->
   <script src="/js/dashboard.js"></script>
 </body>
+
 </html>
