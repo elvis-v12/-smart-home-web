@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
-
 const app = express();
-
+const { train } = require("./classifier");
+train();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,9 +19,11 @@ app.use("/", webRoutes);
 const lightsRoutes = require("./routes/api/lights.routes");
 const tempRoutes = require("./routes/api/temp.routes");
 const doorRoutes = require("./routes/api/door.routes");
+const commandRoutes = require("./routes/api/command.routes");
 
 app.use("/api/lights", lightsRoutes);
 app.use("/api/temp", tempRoutes);
 app.use("/api/door", doorRoutes);
+app.use("/api/command", commandRoutes);
 
 module.exports = app;
